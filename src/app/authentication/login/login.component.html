@@ -1,1 +1,17 @@
-<p>login works!</p>
+<h2 class="uppercase text-gray-800 font-bold text-center py-10">Login</h2>
+
+<div class="flex flex-col w-full">
+  <div *ngIf="message !== ''" class="bg-red-300 border-red-500 p-4 m-4 rounded-md">
+    {{ message }}
+  </div>
+  <mat-form-field class="w-full">
+    <mat-label>User</mat-label>
+    <input matInput placeholder="Ex. admin" [(ngModel)]="username">
+  </mat-form-field>
+  <mat-form-field class="w-full">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="Ex. 123456" [(ngModel)]="password">
+  </mat-form-field>
+
+  <button type="button" (click)="login()" mat-flat-button color="primary">Login</button>
+</div>
